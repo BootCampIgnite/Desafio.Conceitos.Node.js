@@ -103,7 +103,7 @@ app.put("/todos/:id", checksExistsUserAccount, (request, response) => {
   request.user.todos = request.user.todos.filter((element) => {
     if (element === todoExists) {
       element.title = title;
-      element.deadline = deadline;
+      element.deadline = new Date(deadline);
     }
 
     return element;
